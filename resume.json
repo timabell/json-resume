@@ -1,0 +1,682 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Tim Abell 🤓",
+    "label": "Available Now ~ 💻 C# + Rust  💻 Lead + Dev  💻  Contracts + Projects 💻",
+    "image": "",
+    "email": "tim@timwise.co.uk",
+    "phone": "07779577969",
+    "url": "",
+    "summary": "🤓 Software consultant, lead engineer, nerd & coder.\n🤓 Founder of charmconsulting.co.uk and rustworkshop.co\n🤓 Consultants in C#, Azure and related tech\n🤓 Building RustLang agency.\n🤓 blogs at timwise.co.uk\n🤓 Writes tests first with vim.",
+    "location": {
+      "countryCode": "US",
+      "address": "Tadley, UK"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "timabell",
+        "url": "https://www.linkedin.com/in/timabell/"
+      },
+      {
+        "network": "Twitter",
+        "username": "tim_abell",
+        "url": "https://twitter.com/tim_abell"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Charm Consulting Ltd",
+      "position": "Director & Software Engineering Consultant",
+      "startDate": "2012-08-31",
+      "endDate": "",
+      "highlights": [],
+      "summary": "We've been contributing to the success of software projects since 2012. We love projects that deliver value to you and your end users. If you're thinking of starting a new software project, legacy or greenfield then be sure to reduce your risk of failure by booking a free expert advice call with us first with no obligation to purchase further services. We want you to succeed.",
+      "url": "",
+      "location": "Burghfield, Berkshire, UK"
+    },
+    {
+      "name": "Rust Workshop",
+      "position": "Founder",
+      "startDate": "2023-01-31",
+      "endDate": "",
+      "highlights": [],
+      "summary": "Building a new specialist software development agency and community and the popular and impressive RustLang programming language. || https://rustworkshop.co/ ||",
+      "url": ""
+    },
+    {
+      "name": "NewDay",
+      "position": "Lead developer (contract)",
+      "startDate": "2022-09-30",
+      "endDate": "2023-03-31",
+      "highlights": [],
+      "summary": "Lead dev for 3 engineers on a modern Azure microservices event sourced message based system. Collaborating with several other peer teams, product owners etc to support and enable the team to deliver quality software at a sustainable pace.",
+      "url": "https://www.linkedin.com/company/newday/"
+    },
+    {
+      "name": "NewDay",
+      "position": "Contract Software Engineer",
+      "startDate": "2022-04-30",
+      "endDate": "2022-09-30",
+      "highlights": [],
+      "summary": "Providing software engineering services to assist building a high-performance event-sourced message based system in dotnet. Azure cloud etc.",
+      "url": "https://www.linkedin.com/company/newday/",
+      "location": "London, England, United Kingdom"
+    },
+    {
+      "name": "101 Ways",
+      "position": "Contract Consultant",
+      "startDate": "2022-02-28",
+      "endDate": "2022-04-30",
+      "highlights": [],
+      "summary": "Provided development services on behalf of 101 Ways to DrDoctor. Several small projects to improve DrDoctor systems; operating within existing client delivery teams. Provided 101 Ways with a detailed set of insights as a basis for further assisting their client with improvements to their development organisation.",
+      "url": "https://www.linkedin.com/company/101-ways/"
+    },
+    {
+      "name": "DrDoctor",
+      "position": "Contract Software Engineer",
+      "startDate": "2022-02-28",
+      "endDate": "2022-04-30",
+      "highlights": [],
+      "summary": "Three small projects on behalf of 101 Ways.\n- Security patching\n- Improvements to a PowerBI report-embedding system (dotnet)\n- Research and recommendations for improvements to internal GDPR request handling processes",
+      "url": "https://www.linkedin.com/company/drdoctor/"
+    },
+    {
+      "name": "eSynergy Solutions",
+      "position": "Lead Associate, Software Engineering",
+      "startDate": "2018-04-30",
+      "endDate": "2022-01-31",
+      "highlights": [],
+      "summary": "Contributing to eSynergy's success as a valued lead associate to deliver projects for their clients. Contributions: delivery on projects, technical screening, speaking at internal and lead-digital events.",
+      "url": "https://www.linkedin.com/company/esynergy-solutions/"
+    },
+    {
+      "name": "DogLost",
+      "position": "Tech Volunteer",
+      "startDate": "2018-12-31",
+      "endDate": "2021-11-30",
+      "highlights": [],
+      "summary": "DogLost.co.uk is the biggest lost & found database + website for the UK, plus a network of volunteers giving support and advice to people going through the stress of losing their beloved dog.\nI've become part of the trusted leadership team and am helping the organisation make the best of technology and tools on restricted resources.",
+      "url": ""
+    },
+    {
+      "name": "DfE Digital and Technology",
+      "position": "Contract Developer",
+      "startDate": "2021-03-31",
+      "endDate": "2021-07-31",
+      "highlights": [],
+      "summary": "Part of a team building a tracking and payment system for the reformed continuing teacher professional development system. Contributions included:\n- encouraging a focus on immediate delivery and agile practices with an inexperienced product manager\n- contributions to the ruby on rails codebase\n- weekly reporting back to eSynergy (my direct client) on the progress and goings-on in the project to help them keep the finger on the pulse of their project (reportedly very useful)\n- reviewing code, contributing to discussions on how to build the system",
+      "url": "https://www.linkedin.com/company/department-for-education-digital-technology/"
+    },
+    {
+      "name": "National Careers Service",
+      "position": "Contract C# Developer",
+      "startDate": "2020-06-30",
+      "endDate": "2021-03-31",
+      "highlights": [],
+      "summary": "I joined this rescue project to assist the transition from first successful delivery to ongoing excellence in delivery. As well as being involved in front-line coding to improve the project, I've assisted the team in making the process, relationship and architectural transformations needed to become a top notch delivery team in a challenging enterprise environment.\n\nWe've been iterating on a c# aspnet dotnet-core application deployed to Azure with multiple microservices and Azure Function Apps. We've been working to improve the data, quality modelling and storage in the Azure CosmosDB and hosted SQL Server.\n\nTo support this effort I have extensively researched industry best practices for dealing with low quality projects; you can read the full write up here https://timwise.co.uk/2020/07/09/approaches-to-refactoring-and-technical-debt/",
+      "url": "https://www.linkedin.com/company/national-careers/",
+      "location": "Remote"
+    },
+    {
+      "name": "DfE Digital and Technology",
+      "position": "Contract Developer",
+      "startDate": "2018-04-30",
+      "endDate": "2020-03-31",
+      "highlights": [],
+      "summary": "Part of a GDS-style team at the UK Department for Education building a service to help potential teachers find postgraduate teacher training. https://www.gov.uk/find-postgraduate-teacher-training-courses\nCoding: .net core, c#, bash, postgres, ruby on rails, js, microservices, terraform, azure.... it's all up on https://github.com/DFE-Digital/ - been learning a lot of new tech as I build!\nTeam: a high performing multi-discipline team, from user research through support to design and dev, all focussed on user-needs. Lots of pairing & mentoring. I wrote a piece on delivery managers which you might find interesting: https://timwise.co.uk/2019/07/08/why-every-team-needs-a-delivery-manager/\n\n\"I formally wanted a show a huge amount of gratitude for Tim Abell. Tim has been on #twd_find for 2 years and has had a massive positive impact on the service, team and ultimately, our users. You will be missed mate! \" ~ Dan Mitchell, Delivery Manager",
+      "url": "https://www.linkedin.com/company/department-for-education-digital-technology/",
+      "location": "London, United Kingdom"
+    },
+    {
+      "name": "Capita IT Professional Services",
+      "position": "Contract C# Developer",
+      "startDate": "2017-05-31",
+      "endDate": "2018-03-31",
+      "highlights": [],
+      "summary": "Referral. Part of a team working on an ASP.NET MVC, SQL Server project for a government department. Worked to ensure my direct client and their customer’s representatives were satisfied with the improvements made to the system. Suggested improvements based on my experience, but allowed the client to decide what was appropriate to take forward. Unfortunately I'm unable to discuss this role further due to NDA. Gained SC level clearance.",
+      "url": "https://www.linkedin.com/company/capita-it-professional-services/",
+      "location": "Reading, Berkshire, United Kingdom"
+    },
+    {
+      "name": "Solidsoft Reply",
+      "position": "Contract C# Programmer - EMVS project",
+      "startDate": "2016-12-31",
+      "endDate": "2017-03-31",
+      "highlights": [],
+      "summary": "Repeat business. Worked on adding functionality to a low-latency high-throughput Azure Service Fabric application written in C# with an extensive regression-test suite.",
+      "url": "https://www.linkedin.com/company/solidsoft/",
+      "location": "Basingstoke"
+    },
+    {
+      "name": "MDK INNOVATION LIMITED",
+      "position": "Contract C# Programmer",
+      "startDate": "2016-04-30",
+      "endDate": "2016-11-30",
+      "highlights": [],
+      "summary": "Repeat business extending the new case-management system for the Ministry of Justice created in my last contract with MDK.\n\nWorked on their ASP.NET MVC / C# / Bootstrap / SQL Server 2012 / EF6 code. Wrote code to migrate and merge live data from additional legacy systems into the new production database created at the end of my previous contract with MDK. Worked on database-schema migrations with ReadyRoll to support new application code.",
+      "url": "https://www.linkedin.com/company/mdkinnovation/",
+      "location": "Remote"
+    },
+    {
+      "name": "Solidsoft Reply",
+      "position": "Contract C# Programmer - Glasswall project",
+      "startDate": "2015-11-30",
+      "endDate": "2016-04-30",
+      "highlights": [],
+      "summary": "Referral. Joined a team building a SQL Server backed SMTP security relay and associated ASP.NET management console for a Solidsoft client.\n\nThis was a SCRUM / Agile team using test-driven development (TDD) to deliver usable increments of working software on a regular basis. The project had a full end-to-end regression-test suite using Selenium to drive the relay’s admin console and Specflow to define the tests (a BDD/Gherkin tool). This project helped shape my thinking on nregression testing, learn more at https://blog.timwise.co.uk/2018/03/13/regression-tests-for-asp-net-sql-projects/",
+      "url": "https://www.linkedin.com/company/solidsoft/",
+      "location": "Basingstoke"
+    },
+    {
+      "name": "MDK INNOVATION LIMITED",
+      "position": "Contract C# / SQL programmer",
+      "startDate": "2014-10-31",
+      "endDate": "2015-10-31",
+      "highlights": [],
+      "summary": "Part of a remote-only team building greenfield case-management system in ASP.NET MVC 5 / Bootstrap / SQL Server 2012 for use by the Ministry of Justice. I contributed to the full stack, with an emphasis on the database & data migration from the legacy system. I intoduced ReadyRoll to handle subsequent database upgrades and a new database-build process. I assisted the team with the switch from TFS to git. I improved documentation to assist future developers / maintainers / support staff.",
+      "url": "https://www.linkedin.com/company/mdkinnovation/",
+      "location": "Remote"
+    },
+    {
+      "name": "3chillies",
+      "position": "Contract C# developer",
+      "startDate": "2014-07-31",
+      "endDate": "2014-10-31",
+      "highlights": [],
+      "summary": "I worked on an ASP.NET MVC data-collection site for a client, including workflow and versioning, backed by Entity Framework 6.1 & SQL Server 2012. This is a complete replacement for a legacy system on different technologies. Layered architecture, making use of the Command-Query pattern (aka CQRS) at the data access layer.",
+      "url": "",
+      "location": "Reading"
+    },
+    {
+      "name": "Syzygy",
+      "position": "Contract C# developer",
+      "startDate": "2014-06-30",
+      "endDate": "2014-07-31",
+      "highlights": [],
+      "summary": "Worked on an ASP.NET based CMS site. Integration with SOAP WCF web service, making use of TDD and Moq. Refactoring of existing library’s code to improve architecture and testability. Provided guidance on source-management strategy and shared my experience with organising projects as they migrate from SVN to git.",
+      "url": "",
+      "location": "London, United Kingdom"
+    },
+    {
+      "name": "ProvenWorks",
+      "position": "Contract C# developer",
+      "startDate": "2014-05-31",
+      "endDate": "2014-05-31",
+      "highlights": [],
+      "summary": "Fixes and improvements to an ASP.NET C# Salesforce application hosted in Azure.",
+      "url": "https://www.linkedin.com/company/provenworks/",
+      "location": "Reading"
+    },
+    {
+      "name": "Oliver Marketing",
+      "position": "Contract dev for Vodafone",
+      "startDate": "2014-04-30",
+      "endDate": "2014-05-31",
+      "highlights": [],
+      "summary": "Worked on an ASP.NET MVC4 / SQL Server / EF4 / Ninject / AngularJS project as part of a team. The project is an intranet system for dynamically managing forms. A significant part of the work was parsing of the legacy form definitions (XML), much of which was done via test-driven development (TDD), and included creation of a suite of regression tests.",
+      "url": "https://www.linkedin.com/company/oliver-marketing/",
+      "location": "Newbury"
+    },
+    {
+      "name": "BGL Group",
+      "position": "Contract developer",
+      "startDate": "2014-03-31",
+      "endDate": "2014-03-31",
+      "highlights": [],
+      "summary": "Worked on an ASP.NET C# website as part of an agile team that made heavy use of pair-programming. Creation of custom pages on top of a CMS system.",
+      "url": "",
+      "location": "Peterborough, United Kingdom"
+    },
+    {
+      "name": "Government Digital Service",
+      "position": "Rails Developer",
+      "startDate": "2013-07-31",
+      "endDate": "2013-11-30",
+      "highlights": [],
+      "summary": "Before this contract I took a break from C# to learn the basics of Ruby on Rails; then at GDS I worked on the RoR applications behind gov.uk. I worked in two different agile/scrum teams and used TDD. I learned a huge amount from some very experienced Rails engineers and I gained exposure to MongoDB, nginx, puppet & vagrant. After this contract I returned to C# contracting reinvigorated and with a wider perspective.",
+      "url": "https://www.linkedin.com/company/government-digital-service/",
+      "location": "London, United Kingdom"
+    },
+    {
+      "name": "Audatex UK",
+      "position": "Development Team Lead (Contract)",
+      "startDate": "2012-08-31",
+      "endDate": "2013-04-30",
+      "highlights": [],
+      "summary": "Project #1\n-------------\nLead developer for a team of four contract and permanent developers. We created a greenfield C# / ASP.NET MVC (Razor) web-based product for the motor-insurance industry. I utilized Agile SCRUM methods to organise the team's planning and workload and in doing so provided a showcase of best practice to the broader organisation.\n\nWe built the product to run on load-balanced web servers, backed by Microsoft SQL Server 2012 accessed through Entity Framework (EF4) model-first. The product integrates with Audatex's existing Oracle 11g data store. On the frontend we utilized modern HTML, jQuery, AJAX, and CSS to provide a quality user experience, ably assisted by a design agency. We used Test Driven Development (TDD) and added integration tests through my knowledge of automated database builds.\n\nBoth projects used TFS 2010 for source control, continuous integration, and (with customisation) SCRUM process management including elements of Kanban.\n\nProject #2 (contract extended)\n-------------\nLead developer for a team of five, integrating a mobile solution with Audatex's existing systems. We provided an ASP.NET 4.5 WebAPI back-end, and delivered an iOS app written in Titanium / Javascript / HTML5 / CSS to be run on iPads and Android tablets. This was combined with some rework of the existing C# platform architecture (using NHibernate).\n\nAs the team lead and SCRUM master, I guided the team in utilizing SCRUM practices, and contributed as part of the development team to the planning and implementation of the codebase.",
+      "url": "",
+      "location": "Theale, Reading"
+    },
+    {
+      "name": "Signals Ltd",
+      "position": "C# Developer (Contract)",
+      "startDate": "2012-05-31",
+      "endDate": "2012-07-31",
+      "highlights": [],
+      "summary": "Extended an existing C# / ASP.NET MVC 3 / SQL Server 2008 application for a significant Signals customer, and was involved in communication with the end customer. I brought Agile / SCRUM experience to the team, and added automated database builds.",
+      "url": "https://www.linkedin.com/company/signals-ltd/",
+      "location": "Henley on Thames"
+    },
+    {
+      "name": "PharmiWeb",
+      "position": "C# / Web Developer (Contract)",
+      "startDate": "2012-03-31",
+      "endDate": "2012-05-31",
+      "highlights": [],
+      "summary": "First contract role. I extended a proprietary CMS to provide for uploading and hosting of self-led presentations. I solved an interesting problem with HTML rendering variations which became the highest-voted answer to the question on Stack Overflow: http://stackoverflow.com/a/10137912/10245",
+      "url": "",
+      "location": "Bracknell"
+    },
+    {
+      "name": "PRISYMID",
+      "position": "Senior Developer",
+      "startDate": "2011-04-30",
+      "endDate": "2012-03-31",
+      "highlights": [],
+      "summary": "Worked on customer-specific variations to the core product written in C# ASP.NET MVC / SQL Server 2008 / Oracle 10g. Some TDD. I became known as the \"go to guy\" by the incoming director of development for my visible attitude of getting things done and working hard to make improvements beyond the task at hand.",
+      "url": "https://www.linkedin.com/company/loftware/",
+      "location": "Wokingham"
+    },
+    {
+      "name": "Caternet Ltd",
+      "position": "Senior Software Developer",
+      "startDate": "2010-08-31",
+      "endDate": "2011-04-30",
+      "highlights": [],
+      "summary": "Worked on a SaaS product written in C# / ASP.NET MVC2 / SQL Server 2008. I gained experience of working in a highly effective Agile / SCRUM team.",
+      "url": "https://www.linkedin.com/company/zupatech/",
+      "location": "Liss, Hampshire"
+    },
+    {
+      "name": "emapsite.com",
+      "position": "Software Developer",
+      "startDate": "2004-08-31",
+      "endDate": "2010-08-31",
+      "highlights": [],
+      "summary": "I enjoyed 6 years with emapsite. I built a close working relationship with staff and clients, gaining the trust and respect of all and forging strong friendships. I was  responsible for website and intranet development (C#, ASP.NET, SQL Server 2005 and some Java; with clientside Javascript, CSS, jQuery). As this is a small company, my role was varied and covered all aspects of development and system administration. I introduced Continuous Integration with CruiseControl.NET and automated the database build and deployment. I brought in source control (svn), then migrated to git and trained the team on it.",
+      "url": "https://www.linkedin.com/company/emapsite/",
+      "location": "Eversley, Hants"
+    },
+    {
+      "name": "Rhetorik",
+      "position": "Programmer",
+      "startDate": "2003-02-28",
+      "endDate": "2004-07-31",
+      "highlights": [],
+      "summary": "Worked on all the in-house software. SQL Server 7 / 2000, MS Access 97 / 2000 / VBA, VB6, ASP Classic, C#.NET, ASP.NET.",
+      "url": "https://www.linkedin.com/company/rhetorik/",
+      "location": "Systems Application Developer"
+    },
+    {
+      "name": "Volume Direct Marketing",
+      "position": "Programmer",
+      "startDate": "2001-10-31",
+      "endDate": "2002-10-31",
+      "highlights": [],
+      "summary": "Contact data management for physical/email marketing. Created utility programs in ASP Classic / Access 2000 / VBScript / VB6, including an SMTP mailer and DNS validator.",
+      "url": "",
+      "location": "Wokingham, Berkshire, UK"
+    },
+    {
+      "name": "ICMA Centre",
+      "position": "Software Developer",
+      "startDate": "2000-06-30",
+      "endDate": "2001-10-31",
+      "highlights": [],
+      "summary": "Formerly ISMA Centre. Responsible for ISMA Centre's website created with ASP Classic & SQL Server '97 / 2000. I created a home-grown CMS in VB6 for the site. I introduced source control (in the same year “The Joel Test” was written!) I created extranets for prospective students, current students and Alumni. I also worked on internal VB6 / SQL Server 7 systems.",
+      "url": "https://www.linkedin.com/school/icma-centre/",
+      "location": "Reading, United Kingdom"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "The University of Reading",
+      "area": "Cybernetics and Control Engineering",
+      "studyType": "BSc",
+      "startDate": "1997-12-31",
+      "endDate": "2000-12-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Reading Blue Coat School, Sonning",
+      "area": "",
+      "studyType": "",
+      "startDate": "1990-12-31",
+      "endDate": "1997-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Microsoft Certified Technology Specialist in C# and ASP.NET",
+      "issuer": "Microsoft",
+      "startDate": "2009-12-31"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Rust (Programming Language)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C#",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Website Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "TDD",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Solidsoft Reply",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MoSCoW",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "IIS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": ".NET Framework",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "jquery",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "EPiServer",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Scrum",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SaaS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Agile Methodologies",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "jQuery",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "ASP.NET",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": ".NET",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MySQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SQL Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "ASP.NET MVC",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Software Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Services",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Oracle",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Programming",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SSRS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "MVC",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Java",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Git",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Subversion",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Ruby on Rails",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Linux",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Ruby",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Linux server administration",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Databases",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Test Driven Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "OOP",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Agile",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Visual Studio",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "LINQ",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Python",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Applications",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native Speaker"
+    },
+    {
+      "fluency": "Elementary",
+      "language": "French"
+    },
+    {
+      "fluency": "Elementary",
+      "language": "German"
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Nicholas Masters",
+      "reference": "Working with Tim is a refreshing and new approach to working with development specialists. Not only is Tim an expert in his discipline, he also possesses extremely high levels of work ethic and commitment to continual development. Tim excels when working in a consultancy setting with his communication skills and ability to read the room. I would work with Tim again in a heartbeat ."
+    },
+    {
+      "name": "George Kelly",
+      "reference": "I've had the pleasure of working closely with Tim for the past year or so. Not only is Tim a first-class developer, but also someone who dedicates time to strengthen the wider team relationships. His passion towards his work is reflected in his focus on delivering quality outcomes. Tim has a friendly approach and has a talent at explaining technical terms to non-technical people. He constantly strives to expand his knowledge and develop technically. Tim has become a trusted associate and I look forward to continuing our relationship. "
+    },
+    {
+      "name": "Fausta Cerezo-Gomez",
+      "reference": "Tim brings a wide range of skills to the multidisciplinary team where we worked together.  He is not only technically strong on various fields including C#, and Ruby on Rails but he has a sensible and meticulous approach to problem-solving in other areas of the service delivery to users. He is an excellent communicator, and he is well-able to explain technical terms to non-technical people. I have observed how the Product Delivery Manager relies on his expertise for key stakeholders meetings. He is very pleasant and great to have in the team.  "
+    },
+    {
+      "name": "Rav Panesar",
+      "reference": "Worked with Tim at Capita, He was an excellent developer that paid meticulous detail to requirements. Tim worked extremly well in the teamm always came up with great ideas and was always striving to learn new technologies throughout his time on the poject."
+    },
+    {
+      "name": "David Houliston",
+      "reference": "I enjoyed working with Tim, especially as he has an innovative approach, a thorough grasp of the development cycle and an encyclopaedic knowledge of computer languages. He is an excellent C# developer and produces good solutions in a short time. He also has a very enquiring mind and will suggest ways in which development can be done better.\n\nHe is very friendly and makes a point of getting to know those he works with at all levels. "
+    },
+    {
+      "name": "Gary Keogh",
+      "reference": "Tim supplied subcontractor services to MDK Innovation as part of a small team working on the development of a new case management database system for a government department.\r\n\r\nTim made contributions across the whole technology stack, but his most notable role was taking the lead on managing the schemas and Entity Framework models involved in the project. This was a highly complex undertaking, because it involved both management of schema changes from design into development, and from development into production, while simultaneously developing data migration procedures for multiple predecessor systems. Tim addressed these problems with ingenuity and diligence, and the success of the project is due in no small part to his efforts.\r\n\r\nHe was also instrumental in increasing the efficiency of the team, by assisting with the transition to working with new collaboration software and helping us build a better understanding of agile methodologies.\r\n\r\nTim’s engagement ceased shortly after the second wave of system release and data migration was was taken into production, which represented the completion of the first phase of the project. Both operations were accomplished with minimal issues. I cannot recommend Tim highly enough; I would engage him again myself without hesitation if the opportunity arose.\r\n"
+    },
+    {
+      "name": "Jeff Antram",
+      "reference": "Tim was the original team lead and scrum master for the mobile app team I joined at Audatex. I learnt a lot from working with Tim and the project is still reaping the benefits of the processes and approach he put in place."
+    },
+    {
+      "name": "J Gerrard",
+      "reference": "I worked with Tim and found him highly personable, professional, and proactive. With both an eye for quality solutions and an understanding of larger business objectives, he is an asset to any team. I hope to work with him again."
+    },
+    {
+      "name": "Sudhir Tibrewal",
+      "reference": "Tim is a good Team Lead and listens to each individuals. He is good in managing the team and proactive. It was short time but good to work with him."
+    },
+    {
+      "name": "Jawad Umar",
+      "reference": "Attention to detail and the ability to excel in both technical and non-technical aspects of development, Tim was a valued part of our team at Caternet. Both reliable and trustworthy Tim is able to translate business requirements into working software and always there to help team members."
+    }
+  ],
+  "projects": [
+    {
+      "name": "C# TDD example",
+      "startDate": "2013-06-30",
+      "summary": "Just a little exercise in writing C# with TDD.",
+      "url": "https://github.com/timabell/amazing-game",
+      "endDate": "2013-06-30"
+    },
+    {
+      "name": "Entity Framework 6.1 Enum Lookup-Table Generator",
+      "startDate": "",
+      "summary": "An open-source library published on github and made available through nuget.\n\nCreates lookup tables and foreign key constraints based on the enums used in your model.\n\nThis makes up for a feature that's missing in Entity Framework 6.1",
+      "url": "https://www.nuget.org/packages/ef-enum-to-lookup"
+    },
+    {
+      "name": "Gitopolis (git multi-repo cli written in Rust)",
+      "startDate": "",
+      "summary": null,
+      "url": "https://github.com/timabell/gitopolis"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+  }
+}
