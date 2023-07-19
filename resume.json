@@ -366,52 +366,7 @@
       "keywords": []
     },
     {
-      "name": "Website Development",
-      "level": "",
-      "keywords": []
-    },
-    {
       "name": "TDD",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Solidsoft Reply",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "MoSCoW",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "CSS",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "IIS",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Microsoft SQL Server",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": ".NET Framework",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "jquery",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "EPiServer",
       "level": "",
       "keywords": []
     },
@@ -471,42 +426,7 @@
       "keywords": []
     },
     {
-      "name": "Software Development",
-      "level": "",
-      "keywords": []
-    },
-    {
       "name": "Web Services",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Oracle",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Web Development",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Programming",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SSRS",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "HTML",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "MVC",
       "level": "",
       "keywords": []
     },
@@ -517,11 +437,6 @@
     },
     {
       "name": "Git",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Subversion",
       "level": "",
       "keywords": []
     },
@@ -561,32 +476,7 @@
       "keywords": []
     },
     {
-      "name": "OOP",
-      "level": "",
-      "keywords": []
-    },
-    {
       "name": "Agile",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Visual Studio",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "LINQ",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Python",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Web Applications",
       "level": "",
       "keywords": []
     }
