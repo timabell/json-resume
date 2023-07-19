@@ -6,7 +6,7 @@
     "image": "",
     "email": "tim@timwise.co.uk",
     "phone": "07779577969",
-    "url": "",
+    "url": "https://timwise.co.uk/",
     "summary": "🤓 Software consultant, lead engineer, nerd & coder.\n🤓 Founder of charmconsulting.co.uk and rustworkshop.co\n🤓 Consultants in C#, Azure and related tech\n🤓 Building RustLang agency.\n🤓 blogs at timwise.co.uk\n🤓 Writes tests first with vim.",
     "location": {
       "countryCode": "US",
@@ -30,20 +30,18 @@
       "name": "Charm Consulting Ltd",
       "position": "Director & Software Engineering Consultant",
       "startDate": "2012-08-31",
-      "endDate": "",
       "highlights": [],
       "summary": "We've been contributing to the success of software projects since 2012. We love projects that deliver value to you and your end users. If you're thinking of starting a new software project, legacy or greenfield then be sure to reduce your risk of failure by booking a free expert advice call with us first with no obligation to purchase further services. We want you to succeed.",
-      "url": "",
+      "url": "https://charmconsulting.co.uk/",
       "location": "Burghfield, Berkshire, UK"
     },
     {
       "name": "Rust Workshop",
       "position": "Founder",
       "startDate": "2023-01-31",
-      "endDate": "",
       "highlights": [],
       "summary": "Building a new specialist software development agency and community and the popular and impressive RustLang programming language. || https://rustworkshop.co/ ||",
-      "url": ""
+      "url": "https://rustworkshop.co/"
     },
     {
       "name": "NewDay",
@@ -98,7 +96,7 @@
       "endDate": "2021-11-30",
       "highlights": [],
       "summary": "DogLost.co.uk is the biggest lost & found database + website for the UK, plus a network of volunteers giving support and advice to people going through the stress of losing their beloved dog.\nI've become part of the trusted leadership team and am helping the organisation make the best of technology and tools on restricted resources.",
-      "url": ""
+      "url": "https://www.doglost.co.uk/"
     },
     {
       "name": "DfE Digital and Technology",
@@ -186,7 +184,7 @@
       "endDate": "2014-10-31",
       "highlights": [],
       "summary": "I worked on an ASP.NET MVC data-collection site for a client, including workflow and versioning, backed by Entity Framework 6.1 & SQL Server 2012. This is a complete replacement for a legacy system on different technologies. Layered architecture, making use of the Command-Query pattern (aka CQRS) at the data access layer.",
-      "url": "",
+      "url": "https://www.3chillies.co.uk/",
       "location": "Reading"
     },
     {
@@ -196,7 +194,7 @@
       "endDate": "2014-07-31",
       "highlights": [],
       "summary": "Worked on an ASP.NET based CMS site. Integration with SOAP WCF web service, making use of TDD and Moq. Refactoring of existing library’s code to improve architecture and testability. Provided guidance on source-management strategy and shared my experience with organising projects as they migrate from SVN to git.",
-      "url": "",
+      "url": "https://www.syzygy.co.uk/",
       "location": "London, United Kingdom"
     },
     {
@@ -226,7 +224,6 @@
       "endDate": "2014-03-31",
       "highlights": [],
       "summary": "Worked on an ASP.NET C# website as part of an agile team that made heavy use of pair-programming. Creation of custom pages on top of a CMS system.",
-      "url": "",
       "location": "Peterborough, United Kingdom"
     },
     {
@@ -246,7 +243,6 @@
       "endDate": "2013-04-30",
       "highlights": [],
       "summary": "Project #1\n-------------\nLead developer for a team of four contract and permanent developers. We created a greenfield C# / ASP.NET MVC (Razor) web-based product for the motor-insurance industry. I utilized Agile SCRUM methods to organise the team's planning and workload and in doing so provided a showcase of best practice to the broader organisation.\n\nWe built the product to run on load-balanced web servers, backed by Microsoft SQL Server 2012 accessed through Entity Framework (EF4) model-first. The product integrates with Audatex's existing Oracle 11g data store. On the frontend we utilized modern HTML, jQuery, AJAX, and CSS to provide a quality user experience, ably assisted by a design agency. We used Test Driven Development (TDD) and added integration tests through my knowledge of automated database builds.\n\nBoth projects used TFS 2010 for source control, continuous integration, and (with customisation) SCRUM process management including elements of Kanban.\n\nProject #2 (contract extended)\n-------------\nLead developer for a team of five, integrating a mobile solution with Audatex's existing systems. We provided an ASP.NET 4.5 WebAPI back-end, and delivered an iOS app written in Titanium / Javascript / HTML5 / CSS to be run on iPads and Android tablets. This was combined with some rework of the existing C# platform architecture (using NHibernate).\n\nAs the team lead and SCRUM master, I guided the team in utilizing SCRUM practices, and contributed as part of the development team to the planning and implementation of the codebase.",
-      "url": "",
       "location": "Theale, Reading"
     },
     {
@@ -266,7 +262,6 @@
       "endDate": "2012-05-31",
       "highlights": [],
       "summary": "First contract role. I extended a proprietary CMS to provide for uploading and hosting of self-led presentations. I solved an interesting problem with HTML rendering variations which became the highest-voted answer to the question on Stack Overflow: http://stackoverflow.com/a/10137912/10245",
-      "url": "",
       "location": "Bracknell"
     },
     {
@@ -316,7 +311,6 @@
       "endDate": "2002-10-31",
       "highlights": [],
       "summary": "Contact data management for physical/email marketing. Created utility programs in ASP Classic / Access 2000 / VBScript / VB6, including an SMTP mailer and DNS validator.",
-      "url": "",
       "location": "Wokingham, Berkshire, UK"
     },
     {
@@ -664,13 +658,11 @@
     },
     {
       "name": "Entity Framework 6.1 Enum Lookup-Table Generator",
-      "startDate": "",
       "summary": "An open-source library published on github and made available through nuget.\n\nCreates lookup tables and foreign key constraints based on the enums used in your model.\n\nThis makes up for a feature that's missing in Entity Framework 6.1",
       "url": "https://www.nuget.org/packages/ef-enum-to-lookup"
     },
     {
       "name": "Gitopolis (git multi-repo cli written in Rust)",
-      "startDate": "",
       "summary": null,
       "url": "https://github.com/timabell/gitopolis"
     }
