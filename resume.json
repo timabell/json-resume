@@ -1,15 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
-    "name": "Tim Abell 🤓",
+    "name": "Tim Abell",
     "label": "Available Now ~ 💻 C# + Rust  💻 Lead + Dev  💻  Contracts + Projects 💻",
     "image": "",
     "email": "tim@timwise.co.uk",
     "phone": "07779577969",
     "url": "https://timwise.co.uk/",
-    "summary": "🤓 Software consultant, lead engineer, nerd & coder.\n🤓 Founder of charmconsulting.co.uk and rustworkshop.co\n🤓 Consultants in C#, Azure and related tech\n🤓 Building RustLang agency.\n🤓 blogs at timwise.co.uk\n🤓 Writes tests first with vim.\n\nRecruiters: this CV is not authorised for distribution to your clients. Please contact me for permission to represent me and for a separate copy containing an authorisation code & GPG signature. Thanks.  Prospective clients: if you receive my CV from a third-party without the authorisation code & GPG signature then I haven't given them my permission to represent me. Learn more: https://charmconsulting.co.uk/recruiters",
+    "summary": "As a director, lead developer and software engineering consultant at Charm Consulting Ltd, I have been contributing to the success of software projects since 2012. I have over 20 years of experience in software development, specializing in C#, Azure, and related technologies. I am also a Microsoft Certified Technology Specialist in C# and ASP.NET.  \n\n In January 2023, I founded Rust Workshop, a new specialist software development agency and community focused on the popular and impressive RustLang programming language. I am passionate about building high-performance, reliable, and secure software using Rust, and sharing my expertise and insights with other developers. I also write at timwise.co.uk, where I share my tips, tricks, and best practices in software engineering. I am always looking for new challenges and opportunities to apply my skills and learn new ones.  \n\n Recruiters: this CV is not authorised for distribution to your clients. Please contact me for permission to represent me and for a separate copy containing an authorisation code & GPG signature. Thanks.  Prospective clients: if you receive my CV from a third-party without the authorisation code & GPG signature then I haven't given them my permission to represent me. Learn more: https://charmconsulting.co.uk/recruiters",
     "location": {
-      "countryCode": "US",
+      "countryCode": "GB",
       "address": "Tadley, UK"
     },
     "profiles": [
