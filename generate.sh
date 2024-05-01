@@ -7,12 +7,24 @@ mkdir -p "$outputPath"
 
 filename=tim-abell-cv
 source="resume.hjson"
+#source="authd-resume.hjson"
 json="$outputPath/$filename.json"
 html="$outputPath/$filename.html"
 pdf="$outputPath/$filename.pdf"
+cvauth="$outputPath/signed-auth.txt.asc"
 
 # hjson to json - https://www.npmjs.com/package/hjson
 hjson "$source" -json > "$json"
+
+# top-and-tail summary block
+jq -r '.basics.summary' "$json" > "$outputPath/inputSummary.txt"
+sed -i 's/\\n/\n/g' "$outputPath/inputSummary.txt"
+
+# preview summary
+cat "template-header-preview.txt" "$outputPath/inputSummary.txt" "template-footer-preview.txt" "template-footer-warning.txt" > "$outputPath/previewSummary.txt"
+
+# auth'd summary
+cat "template-header-authd.txt" "$outputPath/inputSummary.txt" "template-footer-warning.txt" "$cvauth" > "$outputPath/authdSummary.txt"
 
 # hack to make line breaks show in html
 sed -i 's/\\n/\\n<br>/g' "$json"
