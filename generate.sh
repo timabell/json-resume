@@ -7,7 +7,7 @@ mkdir -p "$outputPath"
 
 filename=tim-abell-cv
 source="resume.hjson"
-#source="authd-resume.hjson"
+# source="authd-resume.hjson" # uncomment this to use auth'd copy
 json="$outputPath/$filename.json"
 html="$outputPath/$filename.html"
 pdf="$outputPath/$filename.pdf"
@@ -25,6 +25,8 @@ cat "template-header-preview.txt" "$outputPath/inputSummary.txt" "template-foote
 
 # auth'd summary
 cat "template-header-authd.txt" "$outputPath/inputSummary.txt" "template-footer-warning.txt" "$cvauth" > "$outputPath/authdSummary.txt"
+
+# todo: put authd summary back into json before rendering
 
 # hack to make line breaks show in html
 sed -i 's/\\n/\\n<br>/g' "$json"

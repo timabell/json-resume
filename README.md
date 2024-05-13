@@ -18,16 +18,16 @@ It also supports my [cryptographic signing of right-to-represent](https://timwis
 # Usage
 
 1. run [setup.sh](setup.sh) to install dependencies
-3. Create a `resume.hjson` file in a sibling folder/repo called `cv/`
-   1. <https://github.com/hjson/hjson-js> provides conversion tooling for json/hjson
-4. install vscode extensions
-  - [pdf viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
-  - [json tree](https://marketplace.visualstudio.com/items?itemName=ZainChen.json)
-5. edit the auth file (don't check in) based on described spreadsheet (ask me about this if you want a template)
-6. run [sign.sh](sign.sh) to sign the auth info
-7.  edit [resume.json](resume.json)
-8.  uncomment the auth version in generate
-9.  run [generate.sh](generate.sh) to generate html then pdf
+2. Create a `resume.hjson` file in a sibling folder/repo called `cv/`
+    1. <https://github.com/hjson/hjson-js> provides conversion tooling for json/hjson
+3. install vscode extensions
+    - [pdf viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
+    - [json tree](https://marketplace.visualstudio.com/items?itemName=ZainChen.json)
+4. edit the auth file (don't check in) based on described spreadsheet (ask me about this if you want a template)
+5. run [sign.sh](sign.sh) to sign the auth info
+6.  edit [resume.json](resume.json)
+7.  uncomment the auth version in generate
+8.  run [generate.sh](generate.sh) to generate html then pdf
 
 # Why hjson
 
