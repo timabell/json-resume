@@ -11,10 +11,9 @@ program.command('generate-preview')
 
         var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
         var cv = hjson.parse(cvhjson)
-        console.log(cv.basics.summary);
-
-        var cvjson = hjson.stringify(cv)
-        fs.writeFileSync("output/resume.json", cvjson)
+        cv.basics.summary = "mutated summary"
+        var jsoncv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
+        fs.writeFileSync("output/resume.json", jsoncv)
         console.log('done');
     })
 program.command('generate-auth')
