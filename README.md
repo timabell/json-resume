@@ -24,10 +24,16 @@ It also supports my [cryptographic signing of right-to-represent](https://timwis
     - [pdf viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
     - [json tree](https://marketplace.visualstudio.com/items?itemName=ZainChen.json)
 4. edit the auth file (don't check in) based on described spreadsheet (ask me about this if you want a template)
-5. run [sign.sh](sign.sh) to sign the auth info
-6.  edit [resume.json](resume.json)
-7.  uncomment the auth version in generate
-8.  run [generate.sh](generate.sh) to generate html then pdf
+5. generate a preview with `./buildcv.js generate-preview`
+6. generate an authorized copy with `./buildcv.js generate-auth --recruiter xxx --end-client yyy`
+
+```sh
+./buildcv.js generate-preview
+```
+
+```sh
+./buildcv.js generate-auth --recruiter xxx --end-client yyy
+```
 
 # Why hjson
 
