@@ -9,18 +9,12 @@ program.command('generate-preview')
             fs.mkdirSync( 'output');
         }
 
-        fs.readFile('resume.hjson', 'utf8', function(err,cvhjson) {
-            if (err){
-                throw (err)
-            }
-            var cv = hjson.parse(cvhjson)
-            var cvjson = hjson.stringify(cv)
-            fs.writeFile("output/resume.json", cvjson, function(err){
-                if (err){
-                    throw (err)
-                }
-            })
-        })
+        var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
+        var cv = hjson.parse(cvhjson)
+        console.log(cv.basics.summary);
+
+        var cvjson = hjson.stringify(cv)
+        fs.writeFileSync("output/resume.json", cvjson)
         console.log('done');
     })
 program.command('generate-auth')
