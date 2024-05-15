@@ -20,6 +20,7 @@ It also supports my [cryptographic signing of right-to-represent](https://timwis
 1. run [setup.sh](setup.sh) to install dependencies
 2. Create a `resume.hjson` file in a sibling folder/repo called `cv/`
     1. <https://github.com/hjson/hjson-js> provides conversion tooling for json/hjson
+    2. This linkedin exporter does a great job: <https://github.com/joshuatz/linkedin-to-jsonresume>
 3. install vscode extensions
     - [pdf viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
     - [json tree](https://marketplace.visualstudio.com/items?itemName=ZainChen.json)
