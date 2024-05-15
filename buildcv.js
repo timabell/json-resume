@@ -31,6 +31,7 @@ async function generatePreview() {
     var previewFooter = fs.readFileSync('template-footer-preview.txt', 'utf8')
     var cv = hjson.parse(cvhjson)
     cv.basics.summary = previewHeader + '\n\n' + cv.basics.summary + '\n\n' + previewFooter
+    cv.basics.summary = cv.basics.summary.replace(/\n/g, '\n<br>')
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync("output/resume.json", jsonCv)
     var htmlCv = await render(cv, theme)
