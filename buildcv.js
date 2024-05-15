@@ -32,6 +32,10 @@ async function generatePreview() {
     var cv = hjson.parse(cvhjson)
     cv.basics.summary = previewHeader + '\n\n' + cv.basics.summary + '\n\n' + previewFooter
     cv.basics.summary = cv.basics.summary.replace(/\n/g, '\n<br>')
+    cv.work.forEach((entry) => {
+        entry.summary = entry.summary.replace(/\n/g, '\n<br>')
+    })
+
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync("output/resume.json", jsonCv)
     var htmlCv = await render(cv, theme)
