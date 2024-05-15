@@ -1,7 +1,12 @@
 #!/usr/bin/env node
-const { program } = require('commander')
-var hjson = require('hjson')
-var fs = require('fs')
+
+import { Command } from 'commander'
+const program = new Command()
+
+import hjson from 'hjson'
+import fs from 'fs'
+import * as theme from 'jsonresume-theme-even'
+import { render } from 'resumed'
 
 program.command('generate-preview')
     .action(generatePreview)
@@ -13,7 +18,7 @@ program.command('generate-auth')
 
 program.parse()
 
-function generatePreview() {
+async function generatePreview() {
     console.log('generating preview...');
     if (!fs.existsSync('output')) {
         fs.mkdirSync('output');
@@ -24,8 +29,10 @@ function generatePreview() {
     var previewFooter = fs.readFileSync('template-footer-preview.txt', 'utf8')
     var cv = hjson.parse(cvhjson)
     cv.basics.summary = previewHeader + '\n\n' + cv.basics.summary + '\n\n' + previewFooter
-    var jsoncv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
-    fs.writeFileSync("output/resume.json", jsoncv)
+    var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
+    fs.writeFileSync("output/resume.json", jsonCv)
+    var htmlCv = await render(cv, theme)
+    fs.writeFileSync("output/resume.html", htmlCv)
     console.log('done');
 
 }

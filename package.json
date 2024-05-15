@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "chromehtml2pdf": "^1.0.4",
     "commander": "^12.0.0",
