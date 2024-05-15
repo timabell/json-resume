@@ -7,6 +7,8 @@ import hjson from 'hjson'
 import fs from 'fs'
 import * as theme from 'jsonresume-theme-even'
 import { render } from 'resumed'
+import puppeteer from 'puppeteer';
+import path from 'path'
 
 program.command('generate-preview')
     .action(generatePreview)
@@ -32,11 +34,25 @@ async function generatePreview() {
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync("output/resume.json", jsonCv)
     var htmlCv = await render(cv, theme)
-    fs.writeFileSync("output/resume.html", htmlCv)
+    var htmlPath = 'output/resume.html'
+    fs.writeFileSync(htmlPath, htmlCv)
     console.log('done');
 
+    var pdfPath = 'output/resume.pdf'
+    await generatePdf(htmlPath, pdfPath)
 }
 
 function generateAuthd(opts) {
     console.log('mkauth ' + opts.recruiter + ' ' + opts.endClient);
+}
+
+async function generatePdf(input, output) {
+    console.log("launching headless browser to generate pdf...")
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    input = path.resolve(input)
+    await page.goto(`file:///${input}`, { waitUntil: 'networkidle0' });
+    await page.pdf({ path: output, format: 'A4' });
+    await browser.close();
+    console.log(`pdf saved to ${output}`)
 }
