@@ -5,7 +5,7 @@ const program = new Command()
 
 import hjson from 'hjson'
 import fs from 'fs'
-import * as theme from 'jsonresume-theme-even'
+import * as theme from 'jsonresume-theme-kendall'
 import { render } from 'resumed'
 import puppeteer from 'puppeteer';
 import path from 'path'
