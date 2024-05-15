@@ -10,8 +10,10 @@ program.command('generate-preview')
         }
 
         var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
+        var previewHeader = fs.readFileSync('template-header-preview.txt', 'utf8')
+        var previewFooter = fs.readFileSync('template-footer-preview.txt', 'utf8')
         var cv = hjson.parse(cvhjson)
-        cv.basics.summary = "mutated summary"
+        cv.basics.summary = previewHeader + '\n\n' + cv.basics.summary + '\n\n' + previewFooter
         var jsoncv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
         fs.writeFileSync("output/resume.json", jsoncv)
         console.log('done');
