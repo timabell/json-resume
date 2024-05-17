@@ -18,6 +18,10 @@ program.command('generate-auth')
     .option('--end-client <end-client>')
     .action(generateAuthd)
 
+program.command('open')
+    .description('Open the generated files')
+    .action(openFiles)
+
 program.parse()
 
 async function generatePreview() {
@@ -39,11 +43,11 @@ async function generatePreview() {
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync("output/resume.json", jsonCv)
     var htmlCv = await render(cv, theme)
-    var htmlPath = 'output/resume.html'
+    var htmlPath = 'output/tim-abell-cv.html'
     fs.writeFileSync(htmlPath, htmlCv)
     console.log('done');
 
-    var pdfPath = 'output/resume.pdf'
+    var pdfPath = 'output/tim-abell-cv.pdf'
     await generatePdf(htmlPath, pdfPath)
 }
 
@@ -60,4 +64,13 @@ async function generatePdf(input, output) {
     await page.pdf({ path: output, format: 'A4' });
     await browser.close();
     console.log(`pdf saved to ${output}`)
+}
+import open from 'open';
+
+async function openFiles() {
+    const filesToOpen = ['output/tim-abell-cv.html', 'output/tim-abell-cv.pdf'];
+
+    for (const file of filesToOpen) {
+        await open(file);
+    }
 }
