@@ -11,6 +11,8 @@ import puppeteer from 'puppeteer'
 import open from 'open'
 import path from 'path'
 
+const OUTPUT_DIR = 'output'
+
 program.command('generate-preview')
     .action(generatePreview)
 
@@ -27,8 +29,8 @@ program.parse()
 
 async function generatePreview() {
     console.log('generating preview...');
-    if (!fs.existsSync('output')) {
-        fs.mkdirSync('output');
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
     }
 
     var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
@@ -42,13 +44,13 @@ async function generatePreview() {
     })
 
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
-    fs.writeFileSync("output/resume.json", jsonCv)
+    fs.writeFileSync(`${OUTPUT_DIR}/resume.json`, jsonCv)
     var htmlCv = await render(cv, theme)
-    var htmlPath = 'output/tim-abell-cv.html'
+    var htmlPath = `${OUTPUT_DIR}/tim-abell-cv.html`
     fs.writeFileSync(htmlPath, htmlCv)
     console.log('done');
 
-    var pdfPath = 'output/tim-abell-cv.pdf'
+    var pdfPath = `${OUTPUT_DIR}/tim-abell-cv.pdf`
     await generatePdf(htmlPath, pdfPath)
 }
 
@@ -66,10 +68,9 @@ async function generatePdf(input, output) {
     await browser.close();
     console.log(`pdf saved to ${output}`)
 }
-import open from 'open';
 
 async function openFiles() {
-    const filesToOpen = ['output/tim-abell-cv.html', 'output/tim-abell-cv.pdf'];
+    const filesToOpen = [`${OUTPUT_DIR}/tim-abell-cv.html`, `${OUTPUT_DIR}/tim-abell-cv.pdf`];
 
     for (const file of filesToOpen) {
         await open(file);
