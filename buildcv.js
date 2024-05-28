@@ -5,9 +5,10 @@ const program = new Command()
 
 import hjson from 'hjson'
 import fs from 'fs'
-import * as theme from 'jsonresume-theme-kendall'
+import * as theme from 'jsonresume-theme-even'
 import { render } from 'resumed'
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer'
+import open from 'open'
 import path from 'path'
 
 program.command('generate-preview')
