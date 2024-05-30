@@ -28,17 +28,20 @@ program.command('open')
 program.parse()
 
 async function generatePreview() {
-    console.log('generating preview...');
-    if (!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdirSync(OUTPUT_DIR);
-    }
+    console.log('Generating preview...');
+    ensureOutputFolderExists()
 
-    var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
-    var previewHeader = fs.readFileSync('template-header-preview.txt', 'utf8')
-    var previewFooter = fs.readFileSync('template-footer-preview.txt', 'utf8')
-    var cv = hjson.parse(cvhjson)
-    cv.basics.summary = previewHeader + '\n\n' + cv.basics.summary + '\n\n' + previewFooter
+    var cv = readCvData()
+    var templates = readTemplates();
+
+    // replace summary with top-n-tailed summary
+    cv.basics.summary = templates.preview_header
+        + '\n\n' + cv.basics.summary
+        + '\n\n' + templates.preview_footer
+        + '\n\n' + templates.warning;
+
     cv.basics.summary = cv.basics.summary.replace(/\n/g, '\n<br>')
+
     cv.work.forEach((entry) => {
         entry.summary = entry.summary.replace(/\n/g, '\n<br>')
     })
@@ -52,6 +55,26 @@ async function generatePreview() {
 
     var pdfPath = `${OUTPUT_DIR}/tim-abell-cv.pdf`
     await generatePdf(htmlPath, pdfPath)
+}
+
+function ensureOutputFolderExists() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+}
+
+function readTemplates() {
+    return {
+        "warning": fs.readFileSync('template-footer-warning.txt', 'utf8'),
+        "preview_header": fs.readFileSync('template-header-preview.txt', 'utf8'),
+        "preview_footer": fs.readFileSync('template-footer-preview.txt', 'utf8'),
+    }
+}
+
+function readCvData() {
+    var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
+    var cv = hjson.parse(cvhjson)
+    return cv
 }
 
 function generateAuthd(opts) {
