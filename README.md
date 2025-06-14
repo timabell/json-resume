@@ -39,6 +39,12 @@ It also supports my [cryptographic signing of right-to-represent](https://charmc
 ./buildcv.js generate-auth --recruiter xxx --end-client yyy
 ```
 
+If you have multiple gpg keys, you can specify which one to use with the `--gpg-key` option (email or key id).
+
+```sh
+./buildcv.js generate-auth --recruiter xxx --end-client yyy --gpg-key xxx
+```
+
 # Why hjson
 
 The data needs to be easily editable, and json isn't bad but doesn't have the ability to embed literal newlines, and has a lot of markup noise. HJson can be easily converted both ways, and is much nicer to edit by hand.
