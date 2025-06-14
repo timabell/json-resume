@@ -1,0 +1,120 @@
+{
+  $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
+  basics:
+  {
+    name: John Doe
+    label: Software Engineer
+    image: "profile.jpg"
+    email: john.doe@example.com
+    phone: 555-123-4567
+    url: https://johndoe.example.com/
+    summary:
+      '''
+Experienced software engineer with expertise in full-stack development and cloud technologies. Passionate about building scalable solutions and leading technical teams.
+      '''
+    location: {countryCode: "US", address: "San Francisco, CA"}
+    profiles:
+    [
+      {
+        network: LinkedIn
+        username: johndoe
+        url: https://www.linkedin.com/in/johndoe/
+      }
+      {
+        network: GitHub
+        username: johndoe
+        url: https://github.com/johndoe
+      }
+    ]
+  }
+  work:
+  [
+    {
+      name: Tech Corp
+      position: Senior Software Engineer
+      startDate: 2020-01-15
+      endDate: 2023-12-31
+      highlights: ["Led team of 5 engineers", "Reduced deployment time by 50%"]
+      summary:
+      '''
+      Led development of microservices architecture and mentored junior developers. Implemented CI/CD pipelines and improved system reliability.
+      '''
+      url: https://techcorp.example.com/
+      location: San Francisco, CA
+    }
+    {
+      name: StartupXYZ
+      position: Full Stack Developer
+      startDate: 2018-06-01
+      endDate: 2019-12-31
+      highlights: ["Built MVP from scratch", "Scaled to 10k users"]
+      summary:
+      '''
+      Developed full-stack web application using React and Node.js. Worked directly with founders to define product requirements and technical architecture.
+      '''
+      url: https://startupxyz.example.com/
+      location: Austin, TX
+    }
+  ]
+  education:
+  [
+    {
+      institution: University of Technology
+      area: Computer Science
+      studyType: Bachelor of Science
+      startDate: 2014-09-01
+      endDate: 2018-05-31
+      gpa: 3.8
+      courses: ["Data Structures", "Algorithms", "Software Engineering"]
+    }
+    {
+      institution: Community College
+      area: Information Technology
+      studyType: Associate Degree
+      startDate: 2012-09-01
+      endDate: 2014-05-31
+      gpa: 3.9
+      courses: ["Programming Fundamentals", "Database Design"]
+    }
+  ]
+  skills:
+  [
+    {
+      name: Programming Languages
+      level: Expert
+      keywords: ["JavaScript", "Python", "Java", "TypeScript"]
+    }
+    {
+      name: Cloud Platforms
+      level: Advanced
+      keywords: ["AWS", "Azure", "Docker", "Kubernetes"]
+    }
+  ]
+  projects:
+  [
+    {
+      name: E-commerce Platform
+      description: Built scalable e-commerce solution handling 1M+ transactions
+      highlights: ["Microservices architecture", "99.9% uptime"]
+      keywords: ["Node.js", "React", "PostgreSQL"]
+      startDate: 2022-01-01
+      endDate: 2022-12-31
+      url: https://github.com/johndoe/ecommerce
+      roles: ["Team Lead", "Backend Developer"]
+      entity: Tech Corp
+      type: application
+    }
+    {
+      name: Mobile Weather App
+      description: Cross-platform weather application with real-time updates
+      highlights: ["100k+ downloads", "4.8 star rating"]
+      keywords: ["React Native", "API Integration", "Redux"]
+      startDate: 2021-03-01
+      endDate: 2021-08-31
+      url: https://github.com/johndoe/weather-app
+      roles: ["Solo Developer"]
+      entity: Personal Project
+      type: application
+    }
+  ]
+}

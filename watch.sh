@@ -4,5 +4,5 @@
 
 while inotifywait -e close_write resume.hjson
 do
-    ./generate.sh
+    ./buildcv.js generate-preview
 done

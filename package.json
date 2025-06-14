@@ -1,8 +1,15 @@
 {
+  "type": "module",
   "dependencies": {
     "chromehtml2pdf": "^1.0.4",
+    "commander": "^12.0.0",
+    "hjson": "^3.2.2",
     "jsonresume-theme-even": "^0.17.0",
     "jsonresume-theme-kendall": "^0.2.0",
+    "open": "^10.1.0",
     "resumed": "^3.0.1"
+  },
+  "scripts": {
+    "buildcv": "node buildcv.js"
   }
 }

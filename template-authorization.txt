@@ -1,2 +1,2 @@
-Tim Abell has given permission for CLIENT_NAME to pass on this CV to END_CLIENT on DATE; auth code AUTH_CODE. Any copies of my CV received without a valid gpg signature have not been authorized for distribution. Any express or implied right to represent will expire on EXPIRY Learn more: https://charmconsulting.co.uk/recruiters
+Tim Abell of Charm Consulting Ltd has given permission for CLIENT_NAME to pass on this CV to END_CLIENT on DATE; auth code AUTH_CODE. Any copies of my CV received without a valid gpg signature have not been authorized for distribution. Any express or implied right to represent will expire on EXPIRY Learn more: charmconsulting.co.uk/recruiters
 
