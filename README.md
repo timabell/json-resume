@@ -4,9 +4,9 @@ This repo is tooling for generating html & pdf CV copies locally from an `hjson`
 
 It's currently hacky as hell (hello bash) and incomplete, but I already use it for real.
 
-Created because I want better automated tooling for generating cvs / profiles from a tidy raw data format. Also because [Text-based tools are the ultimate format for everything](https://timwise.co.uk/2023/06/01/text-based-tools-the-ultimate-format-for-everything/)
+Created because I want better automated tooling for generating cvs / profiles from a tidy raw data format. Also because [Text-based tools are the ultimate format for everything](https://0x5.uk/2023/06/01/text-based-tools-the-ultimate-format-for-everything/)
 
-It also supports my [cryptographic signing of right-to-represent](https://timwise.co.uk/recruiters/) messages that are embedded in per-client CV copies.
+It also supports my [cryptographic signing of right-to-represent](https://charmconsulting.co.uk/recruiters/) messages that are embedded in per-client CV copies.
 
 ## Based on / using
 
@@ -18,13 +18,16 @@ It also supports my [cryptographic signing of right-to-represent](https://timwis
 # Usage
 
 1. run [setup.sh](setup.sh) to install dependencies
-2. Create a `resume.hjson` file in a sibling folder/repo called `cv/`
+2. Create a `input/resume.hjson` (see [input/resume.example.hjson](example hjson))
     1. <https://github.com/hjson/hjson-js> provides conversion tooling for json/hjson
     2. This linkedin exporter does a great job: <https://github.com/joshuatz/linkedin-to-jsonresume>
-3. install vscode extensions
+    3. You might find it convenient to symlink the hjson to a version controlled cv data git repo
+3. Create a `input/profile.jpg`
+    1. example for testing at [input/profile.example.jpg](input/profile.example.jpg)
+    2. Again you may want to symlink this to a more permanent location to avoid losing it to a git clean.
+4. install vscode extensions
     - [pdf viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
     - [json tree](https://marketplace.visualstudio.com/items?itemName=ZainChen.json)
-4. edit the auth file (don't check in) based on described spreadsheet (ask me about this if you want a template)
 5. generate a preview with `./buildcv.js generate-preview`
 6. generate an authorized copy with `./buildcv.js generate-auth --recruiter xxx --end-client yyy`
 

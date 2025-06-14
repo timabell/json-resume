@@ -117,7 +117,7 @@ async function generateCvFiles(cv, filename) {
         entry.summary = entry.summary.replace(/\n/g, '\n<br>')
     })
 
-    fs.copyFileSync('profile.jpg', `${OUTPUT_DIR}/profile.jpg`)
+    fs.copyFileSync('input/profile.jpg', `${OUTPUT_DIR}/profile.jpg`)
 
     console.log('generating json...');
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
@@ -151,7 +151,7 @@ function readTemplates() {
 }
 
 function readCvData() {
-    var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
+    var cvhjson = fs.readFileSync('input/resume.hjson', 'utf8')
     var cv = hjson.parse(cvhjson)
     return cv
 }
