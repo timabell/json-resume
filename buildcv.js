@@ -68,10 +68,10 @@ async function generateAuthd(opts) {
         .replace('END_CLIENT', opts.endClient)
         .replace('DATE', new Date().toISOString().split('T')[0])
         .replace('AUTH_CODE', Math.random().toString(36).substring(2, 15))
-        .replace('EXPIRY', new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // 90 days from now
+        .replace('EXPIRY', new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // 90 days from now
 
     // Write authorization to file
-    fs.writeFileSync(`${OUTPUT_DIR}/signed-auth.txt.asc`, authText)
+    fs.writeFileSync(`${OUTPUT_DIR}/auth.txt`, authText)
 
     // Create auth'd header with client name
     var authdHeader = templates.authd_header.replace('CLIENTNAME', opts.endClient)
