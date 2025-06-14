@@ -18,13 +18,32 @@ program.command('generate-preview')
     .action(generatePreview)
 
 program.command('generate-auth')
-    .option('--recruiter <recruiter>')
-    .option('--end-client <end-client>')
+    .description('Generate an authorized CV for a specific recruiter and end client')
+    .requiredOption('--recruiter <recruiter>', 'Recruiter company name')
+    .requiredOption('--end-client <end-client>', 'End client company name')
+    .option('--gpg-key <gpg-key>', 'GPG key ID or email to use for signing')
     .action(generateAuthd)
 
 program.command('open')
     .description('Open the generated files')
     .action(openFiles)
+
+// Hacky way of getting subcommand help if no options are provided, improvements welcome
+program.configureOutput({
+    outputError: (str, write) => {
+        write(str)
+        if (str.includes('required option')) {
+            write('\n')
+            // Find the current command and show its help
+            const currentCommand = program.commands.find(cmd => process.argv.includes(cmd.name()))
+            if (currentCommand) {
+                currentCommand.outputHelp()
+            } else {
+                program.outputHelp()
+            }
+        }
+    }
+})
 
 program.parse()
 
@@ -47,16 +66,6 @@ async function generatePreview() {
 
 async function generateAuthd(opts) {
     console.log('Generating authorized CV...');
-
-    // Validate required options
-    if (!opts.recruiter) {
-        console.error('Error: --recruiter is required');
-        process.exit(1);
-    }
-    if (!opts.endClient) {
-        console.error('Error: --end-client is required');
-        process.exit(1);
-    }
 
     ensureOutputFolderExists()
 
@@ -82,7 +91,8 @@ async function generateAuthd(opts) {
     // GPG sign the authorization file
     try {
         console.log('Signing authorization file with GPG...')
-        execSync(`gpg --yes --clearsign --output ${OUTPUT_DIR}/auth.txt.asc ${OUTPUT_DIR}/auth.txt`, {
+        const gpgKeyOption = opts.gpgKey ? `--local-user ${opts.gpgKey} ` : ''
+        execSync(`gpg ${gpgKeyOption} --yes --clearsign --output ${OUTPUT_DIR}/auth.txt.asc ${OUTPUT_DIR}/auth.txt`, {
             cwd: process.cwd(),
             stdio: 'inherit'
         })
