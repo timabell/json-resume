@@ -113,7 +113,6 @@ async function generateAuthd(opts) {
     // replace summary with auth'd summary
     cv.basics.summary = authdHeader
         + '\n\n' + cv.basics.summary
-        + '\n\n' + templates.warning
         + '\n\n' + signedAuthText;
 
     // Create sanitized filename with recruiter and client
