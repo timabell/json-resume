@@ -1,2 +1,2 @@
 #!/bin/sh -v
-gpg --verify output/signed-auth.txt.asc
+gpg --verify output/auth.txt.asc

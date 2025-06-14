@@ -10,6 +10,7 @@ import { render } from 'resumed'
 import puppeteer from 'puppeteer'
 import open from 'open'
 import path from 'path'
+import { execSync } from 'child_process'
 
 const OUTPUT_DIR = 'output'
 
@@ -73,14 +74,32 @@ async function generateAuthd(opts) {
     // Write authorization to file
     fs.writeFileSync(`${OUTPUT_DIR}/auth.txt`, authText)
 
+    // GPG sign the authorization file
+    try {
+        console.log('Signing authorization file with GPG...')
+        execSync(`gpg --yes --clearsign --output ${OUTPUT_DIR}/auth.txt.asc ${OUTPUT_DIR}/auth.txt`, { 
+            cwd: process.cwd(),
+            stdio: 'inherit'
+        })
+        console.log('Authorization file signed successfully')
+    } catch (error) {
+        console.error('Failed to sign authorization file:', error.message)
+        process.exit(1)
+    }
+
     // Create auth'd header with client name
-    var authdHeader = templates.authd_header.replace('CLIENTNAME', opts.endClient)
+    var authdHeader = templates.authd_header
+        .replace('CLIENT_NAME', opts.recruiter)
+        .replace('END_CLIENT', opts.endClient)
+
+    // Read the signed authorization file
+    var signedAuthText = fs.readFileSync(`${OUTPUT_DIR}/auth.txt.asc`, 'utf8')
 
     // replace summary with auth'd summary
     cv.basics.summary = authdHeader
         + '\n\n' + cv.basics.summary
         + '\n\n' + templates.warning
-        + '\n\n' + authText;
+        + '\n\n' + signedAuthText;
 
     // Create sanitized filename with recruiter and client
     var sanitizedRecruiter = opts.recruiter.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
