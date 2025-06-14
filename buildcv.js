@@ -40,6 +40,58 @@ async function generatePreview() {
         + '\n\n' + templates.preview_footer
         + '\n\n' + templates.warning;
 
+    var dateStr = new Date().toISOString().split('T')[0]
+    await generateCvFiles(cv, `tim-abell-cv-preview-${dateStr}`)
+}
+
+async function generateAuthd(opts) {
+    console.log('Generating authorized CV...');
+
+    // Validate required options
+    if (!opts.recruiter) {
+        console.error('Error: --recruiter is required');
+        process.exit(1);
+    }
+    if (!opts.endClient) {
+        console.error('Error: --end-client is required');
+        process.exit(1);
+    }
+
+    ensureOutputFolderExists()
+
+    var cv = readCvData()
+    var templates = readTemplates();
+
+    // Generate authorization text with client details
+    var authText = templates.authorization
+        .replace('CLIENT_NAME', opts.recruiter)
+        .replace('END_CLIENT', opts.endClient)
+        .replace('DATE', new Date().toISOString().split('T')[0])
+        .replace('AUTH_CODE', Math.random().toString(36).substring(2, 15))
+        .replace('EXPIRY', new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // 90 days from now
+
+    // Write authorization to file
+    fs.writeFileSync(`${OUTPUT_DIR}/signed-auth.txt.asc`, authText)
+
+    // Create auth'd header with client name
+    var authdHeader = templates.authd_header.replace('CLIENTNAME', opts.endClient)
+
+    // replace summary with auth'd summary
+    cv.basics.summary = authdHeader
+        + '\n\n' + cv.basics.summary
+        + '\n\n' + templates.warning
+        + '\n\n' + authText;
+
+    // Create sanitized filename with recruiter and client
+    var sanitizedRecruiter = opts.recruiter.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+    var sanitizedClient = opts.endClient.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+    var dateStr = new Date().toISOString().split('T')[0]
+    var authFilename = `tim-abell-cv-authd-${sanitizedRecruiter}-${sanitizedClient}-${dateStr}`
+
+    await generateCvFiles(cv, authFilename)
+}
+
+async function generateCvFiles(cv, filename) {
     cv.basics.summary = cv.basics.summary.replace(/\n/g, '\n<br>')
 
     cv.work.forEach((entry) => {
@@ -48,15 +100,19 @@ async function generatePreview() {
 
     fs.copyFileSync('profile.jpg', `${OUTPUT_DIR}/profile.jpg`)
 
+    console.log('generating json...');
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync(`${OUTPUT_DIR}/resume.json`, jsonCv)
-    var htmlCv = await render(cv, theme)
-    var htmlPath = `${OUTPUT_DIR}/tim-abell-cv.html`
-    fs.writeFileSync(htmlPath, htmlCv)
-    console.log('done');
 
-    var pdfPath = `${OUTPUT_DIR}/tim-abell-cv.pdf`
+    console.log('generating html...');
+    var htmlCv = await render(cv, theme)
+    var htmlPath = `${OUTPUT_DIR}/${filename}.html`
+    fs.writeFileSync(htmlPath, htmlCv)
+
+    console.log('generating pdf...');
+    var pdfPath = `${OUTPUT_DIR}/${filename}.pdf`
     await generatePdf(htmlPath, pdfPath)
+    console.log('generation complete');
 }
 
 function ensureOutputFolderExists() {
@@ -70,6 +126,8 @@ function readTemplates() {
         "warning": fs.readFileSync('template-footer-warning.txt', 'utf8'),
         "preview_header": fs.readFileSync('template-header-preview.txt', 'utf8'),
         "preview_footer": fs.readFileSync('template-footer-preview.txt', 'utf8'),
+        "authd_header": fs.readFileSync('template-header-authd.txt', 'utf8'),
+        "authorization": fs.readFileSync('template-authorization.txt', 'utf8'),
     }
 }
 
@@ -77,10 +135,6 @@ function readCvData() {
     var cvhjson = fs.readFileSync('resume.hjson', 'utf8')
     var cv = hjson.parse(cvhjson)
     return cv
-}
-
-function generateAuthd(opts) {
-    console.log('mkauth ' + opts.recruiter + ' ' + opts.endClient);
 }
 
 async function generatePdf(input, output) {
