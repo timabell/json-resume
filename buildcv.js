@@ -68,7 +68,7 @@ async function generateAuthd(opts) {
         .replace('CLIENT_NAME', opts.recruiter)
         .replace('END_CLIENT', opts.endClient)
         .replace('DATE', new Date().toISOString().split('T')[0])
-        .replace('AUTH_CODE', Math.random().toString(36).substring(2, 15))
+        .replace('AUTH_CODE', Math.random().toString(36).substring(2, 15).toUpperCase())
         .replace('EXPIRY', new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // 90 days from now
 
     // Write authorization to file
