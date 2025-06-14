@@ -169,11 +169,11 @@ function ensureOutputFolderExists() {
 
 function readTemplates() {
     return {
-        "warning": fs.readFileSync('template-footer-warning.txt', 'utf8'),
-        "preview_header": fs.readFileSync('template-header-preview.txt', 'utf8'),
-        "preview_footer": fs.readFileSync('template-footer-preview.txt', 'utf8'),
-        "authd_header": fs.readFileSync('template-header-authd.txt', 'utf8'),
-        "authorization": fs.readFileSync('template-authorization.txt', 'utf8'),
+        "warning": fs.readFileSync('templates/template-footer-warning.txt', 'utf8'),
+        "preview_header": fs.readFileSync('templates/template-header-preview.txt', 'utf8'),
+        "preview_footer": fs.readFileSync('templates/template-footer-preview.txt', 'utf8'),
+        "authd_header": fs.readFileSync('templates/template-header-authd.txt', 'utf8'),
+        "authorization": fs.readFileSync('templates/template-authorization.txt', 'utf8'),
     }
 }
 
