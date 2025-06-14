@@ -63,13 +63,18 @@ async function generateAuthd(opts) {
     var cv = readCvData()
     var templates = readTemplates();
 
+    // Generate date and expiry values
+    var dateStr = new Date().toISOString().split('T')[0]
+    var expiryStr = new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    var authCode = Math.random().toString(36).substring(2, 15).toUpperCase()
+
     // Generate authorization text with client details
     var authText = templates.authorization
         .replace('CLIENT_NAME', opts.recruiter)
         .replace('END_CLIENT', opts.endClient)
-        .replace('DATE', new Date().toISOString().split('T')[0])
-        .replace('AUTH_CODE', Math.random().toString(36).substring(2, 15).toUpperCase())
-        .replace('EXPIRY', new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]); // 90 days from now
+        .replace('DATE', dateStr)
+        .replace('AUTH_CODE', authCode)
+        .replace('EXPIRY', expiryStr);
 
     // Write authorization to file
     fs.writeFileSync(`${OUTPUT_DIR}/auth.txt`, authText)
@@ -77,7 +82,7 @@ async function generateAuthd(opts) {
     // GPG sign the authorization file
     try {
         console.log('Signing authorization file with GPG...')
-        execSync(`gpg --yes --clearsign --output ${OUTPUT_DIR}/auth.txt.asc ${OUTPUT_DIR}/auth.txt`, { 
+        execSync(`gpg --yes --clearsign --output ${OUTPUT_DIR}/auth.txt.asc ${OUTPUT_DIR}/auth.txt`, {
             cwd: process.cwd(),
             stdio: 'inherit'
         })
@@ -104,10 +109,22 @@ async function generateAuthd(opts) {
     // Create sanitized filename with recruiter and client
     var sanitizedRecruiter = opts.recruiter.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
     var sanitizedClient = opts.endClient.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
-    var dateStr = new Date().toISOString().split('T')[0]
     var authFilename = `tim-abell-cv-authd-${sanitizedRecruiter}-${sanitizedClient}-${dateStr}`
 
     await generateCvFiles(cv, authFilename)
+
+    // Log to CSV file
+    var csvPath = `${OUTPUT_DIR}/auth-log.csv`
+    var csvHeader = 'Date,Recruiter,EndClient,Expiry,AuthCode\n'
+    var csvRow = `${dateStr},"${opts.recruiter}","${opts.endClient}",${expiryStr},${authCode}\n`
+
+    // Create CSV file with header if it doesn't exist
+    if (!fs.existsSync(csvPath)) {
+        fs.writeFileSync(csvPath, csvHeader)
+    }
+
+    // Append the new row
+    fs.appendFileSync(csvPath, csvRow)
 }
 
 async function generateCvFiles(cv, filename) {
