@@ -46,6 +46,8 @@ async function generatePreview() {
         entry.summary = entry.summary.replace(/\n/g, '\n<br>')
     })
 
+    fs.copyFileSync('profile.jpg', `${OUTPUT_DIR}/profile.jpg`)
+
     var jsonCv = JSON.stringify(cv, null, 2) // 2 = two-space indent to trigger pretty-printing
     fs.writeFileSync(`${OUTPUT_DIR}/resume.json`, jsonCv)
     var htmlCv = await render(cv, theme)
