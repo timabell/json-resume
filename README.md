@@ -45,6 +45,12 @@ If you have multiple gpg keys, you can specify which one to use with the `--gpg-
 ./buildcv.js generate-auth --recruiter xxx --end-client yyy --gpg-key xxx
 ```
 
+To reuse an existing authorization (allowing CV text updates without changing auth details), use the `--auth-code` option with a code from the CSV log:
+
+```sh
+./buildcv.js generate-auth --auth-code ABC123XYZ
+```
+
 # Why hjson
 
 The data needs to be easily editable, and json isn't bad but doesn't have the ability to embed literal newlines, and has a lot of markup noise. HJson can be easily converted both ways, and is much nicer to edit by hand.

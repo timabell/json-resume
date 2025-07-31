@@ -19,9 +19,10 @@ program.command('generate-preview')
 
 program.command('generate-auth')
     .description('Generate an authorized CV for a specific recruiter and end client')
-    .requiredOption('--recruiter <recruiter>', 'Recruiter company name')
-    .requiredOption('--end-client <end-client>', 'End client company name')
+    .option('--recruiter <recruiter>', 'Recruiter company name')
+    .option('--end-client <end-client>', 'End client company name')
     .option('--gpg-key <gpg-key>', 'GPG key ID or email to use for signing')
+    .option('--auth-code <auth-code>', 'Reuse existing authorization by auth code from CSV log')
     .action(generateAuthd)
 
 program.command('open')
@@ -72,15 +73,36 @@ async function generateAuthd(opts) {
     var cv = readCvData()
     var templates = readTemplates();
 
-    // Generate date and expiry values
-    var dateStr = new Date().toISOString().split('T')[0]
-    var expiryStr = new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
-    var authCode = Math.random().toString(36).substring(2, 15).toUpperCase()
+    var dateStr, expiryStr, authCode, recruiter, endClient
+    var todayStr = new Date().toISOString().split('T')[0]
+
+    if (opts.authCode) {
+        // Reuse existing authorization
+        console.log(`Reusing existing authorization with code: ${opts.authCode}`)
+        const existingAuth = findAuthRecord(opts.authCode)
+        
+        dateStr = existingAuth.date
+        expiryStr = existingAuth.expiry
+        authCode = existingAuth.authCode
+        recruiter = existingAuth.recruiter
+        endClient = existingAuth.endClient
+    } else {
+        // Create new authorization
+        if (!opts.recruiter || !opts.endClient) {
+            throw new Error('--recruiter and --end-client are required when not using --auth-code')
+        }
+        
+        dateStr = todayStr
+        expiryStr = new Date(Date.now() + 182 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+        authCode = Math.random().toString(36).substring(2, 15).toUpperCase()
+        recruiter = opts.recruiter
+        endClient = opts.endClient
+    }
 
     // Generate authorization text with client details
     var authText = templates.authorization
-        .replace('CLIENT_NAME', opts.recruiter)
-        .replace('END_CLIENT', opts.endClient)
+        .replace('CLIENT_NAME', recruiter)
+        .replace('END_CLIENT', endClient)
         .replace('DATE', dateStr)
         .replace('AUTH_CODE', authCode)
         .replace('EXPIRY', expiryStr);
@@ -104,8 +126,8 @@ async function generateAuthd(opts) {
 
     // Create auth'd header with client name
     var authdHeader = templates.authd_header
-        .replace('CLIENT_NAME', opts.recruiter)
-        .replace('END_CLIENT', opts.endClient)
+        .replace('CLIENT_NAME', recruiter)
+        .replace('END_CLIENT', endClient)
 
     // Read the signed authorization file
     var signedAuthText = fs.readFileSync(`${OUTPUT_DIR}/auth.txt.asc`, 'utf8')
@@ -115,25 +137,27 @@ async function generateAuthd(opts) {
         + '\n\n' + cv.basics.summary
         + '\n\n' + signedAuthText;
 
-    // Create sanitized filename with recruiter and client
-    var sanitizedRecruiter = opts.recruiter.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
-    var sanitizedClient = opts.endClient.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
-    var authFilename = `tim-abell-cv-authd-${sanitizedRecruiter}-${sanitizedClient}-${dateStr}`
+    // Create sanitized filename with recruiter and client (always use today's date)
+    var sanitizedRecruiter = recruiter.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+    var sanitizedClient = endClient.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
+    var authFilename = `tim-abell-cv-authd-${sanitizedRecruiter}-${sanitizedClient}-${todayStr}`
 
     await generateCvFiles(cv, authFilename)
 
-    // Log to CSV file
-    var csvPath = `${OUTPUT_DIR}/auth-log.csv`
-    var csvHeader = 'Date,Recruiter,EndClient,Expiry,AuthCode\n'
-    var csvRow = `${dateStr},"${opts.recruiter}","${opts.endClient}",${expiryStr},${authCode}\n`
+    // Log to CSV file only if creating new authorization
+    if (!opts.authCode) {
+        var csvPath = `${OUTPUT_DIR}/auth-log.csv`
+        var csvHeader = 'Date,Recruiter,EndClient,Expiry,AuthCode\n'
+        var csvRow = `${todayStr},"${recruiter}","${endClient}",${expiryStr},${authCode}\n`
 
-    // Create CSV file with header if it doesn't exist
-    if (!fs.existsSync(csvPath)) {
-        fs.writeFileSync(csvPath, csvHeader)
+        // Create CSV file with header if it doesn't exist
+        if (!fs.existsSync(csvPath)) {
+            fs.writeFileSync(csvPath, csvHeader)
+        }
+
+        // Append the new row
+        fs.appendFileSync(csvPath, csvRow)
     }
-
-    // Append the new row
-    fs.appendFileSync(csvPath, csvRow)
 }
 
 async function generateCvFiles(cv, filename) {
@@ -180,6 +204,41 @@ function readCvData() {
     var cvhjson = fs.readFileSync('input/resume.hjson', 'utf8')
     var cv = hjson.parse(cvhjson)
     return cv
+}
+
+function findAuthRecord(authCode) {
+    const csvPath = `${OUTPUT_DIR}/auth-log.csv`
+    
+    if (!fs.existsSync(csvPath)) {
+        throw new Error('Auth log CSV file not found. Cannot reuse auth code.')
+    }
+    
+    const csvContent = fs.readFileSync(csvPath, 'utf8')
+    const lines = csvContent.trim().split('\n')
+    
+    // Skip header row
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i]
+        if (!line.trim()) continue
+        
+        // Simple CSV parsing - handle quoted fields
+        const match = line.match(/^([^,]+),"([^"]+)","([^"]+)",([^,]+),([^,]+)$/)
+        if (!match) continue
+        
+        const [, date, recruiter, endClient, expiry, code] = match
+        
+        if (code === authCode) {
+            return {
+                date,
+                recruiter,
+                endClient,
+                expiry,
+                authCode: code
+            }
+        }
+    }
+    
+    throw new Error(`Auth code '${authCode}' not found in CSV log`)
 }
 
 async function generatePdf(input, output) {
